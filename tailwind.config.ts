@@ -21,11 +21,13 @@ export default {
 		extend: {
 			colors: {
 				border: 'hsl(var(--border))',
+				'border-glow': 'hsl(var(--border-glow))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				surface: 'hsl(var(--surface))',
 				'surface-elevated': 'hsl(var(--surface-elevated))',
+				'surface-glass': 'hsl(var(--surface-glass))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -57,6 +59,13 @@ export default {
 				},
 				success: 'hsl(var(--success))',
 				warning: 'hsl(var(--warning))',
+				// Neon color system
+				'neon-cyan': 'hsl(var(--neon-cyan))',
+				'neon-blue': 'hsl(var(--neon-blue))',
+				'neon-green': 'hsl(var(--neon-green))',
+				'neon-pink': 'hsl(var(--neon-pink))',
+				'neon-purple': 'hsl(var(--neon-purple))',
+				// Legacy support
 				molecular: 'hsl(var(--primary))',
 				helix: 'hsl(var(--secondary))',
 				protein: 'hsl(var(--accent))',
@@ -72,9 +81,12 @@ export default {
 				}
 			},
 			backgroundImage: {
-				'gradient-molecular': 'var(--gradient-molecular)',
+				'gradient-protein': 'var(--gradient-protein)',
 				'gradient-helix': 'var(--gradient-helix)',
-				'gradient-data': 'var(--gradient-data)',
+				'gradient-surface': 'var(--gradient-surface)',
+				// Legacy gradients
+				'gradient-molecular': 'var(--gradient-helix)',
+				'gradient-data': 'var(--gradient-helix)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -93,26 +105,49 @@ export default {
 					from: { height: 'var(--radix-accordion-content-height)' },
 					to: { height: '0' }
 				},
-				'molecule-float': {
-					'0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-					'33%': { transform: 'translateY(-10px) rotate(1deg)' },
-					'66%': { transform: 'translateY(5px) rotate(-1deg)' }
+				'protein-rotate': {
+					'0%': { transform: 'rotateY(0deg) rotateX(10deg)' },
+					'100%': { transform: 'rotateY(360deg) rotateX(10deg)' }
+				},
+				'particle-float': {
+					'0%, 100%': { 
+						transform: 'translateY(0px) translateX(0px) rotate(0deg)', 
+						opacity: '0.3' 
+					},
+					'33%': { 
+						transform: 'translateY(-20px) translateX(10px) rotate(120deg)', 
+						opacity: '0.7' 
+					},
+					'66%': { 
+						transform: 'translateY(10px) translateX(-15px) rotate(240deg)', 
+						opacity: '0.5' 
+					}
 				},
 				'fade-in': {
-					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
 					'100%': { opacity: '1', transform: 'translateY(0)' }
 				},
 				'slide-in-right': {
-					'0%': { opacity: '0', transform: 'translateX(20px)' },
+					'0%': { opacity: '0', transform: 'translateX(30px)' },
 					'100%': { opacity: '1', transform: 'translateX(0)' }
+				},
+				'glow-pulse': {
+					'0%, 100%': { 
+						boxShadow: '0 0 20px hsl(var(--neon-cyan) / 0.3)' 
+					},
+					'50%': { 
+						boxShadow: '0 0 40px hsl(var(--neon-cyan) / 0.6), 0 0 60px hsl(var(--neon-blue) / 0.3)' 
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'molecule-float': 'molecule-float 6s ease-in-out infinite',
-				'fade-in': 'fade-in 0.6s ease-out',
-				'slide-in-right': 'slide-in-right 0.5s ease-out'
+				'protein-rotate': 'protein-rotate 10s linear infinite',
+				'particle-float': 'particle-float 8s ease-in-out infinite',
+				'fade-in': 'fade-in 0.8s ease-out',
+				'slide-in-right': 'slide-in-right 0.6s ease-out',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite'
 			}
 		}
 	},

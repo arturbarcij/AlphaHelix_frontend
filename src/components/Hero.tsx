@@ -1,113 +1,167 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Atom, Dna, Microscope } from "lucide-react";
+import { ArrowRight, Atom, Dna, Microscope, Play, Download, Upload, BarChart3 } from "lucide-react";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-surface to-surface-elevated" />
+      {/* Futuristic Background with Particles */}
+      <div className="absolute inset-0 bg-gradient-surface" />
       
-      {/* Animated Background Molecules */}
+      {/* Animated Particle Field */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 molecule-float">
-          <Atom className="w-12 h-12 text-molecular/20" />
+        {/* Floating Particles */}
+        <div className="absolute top-20 left-10 particle-float">
+          <div className="w-2 h-2 rounded-full bg-neon-cyan opacity-60" />
         </div>
-        <div className="absolute top-40 right-20 molecule-float" style={{ animationDelay: '2s' }}>
-          <Dna className="w-16 h-16 text-helix/20" />
+        <div className="absolute top-40 right-20 particle-float" style={{ animationDelay: '2s' }}>
+          <div className="w-3 h-3 rounded-full bg-neon-pink opacity-40" />
         </div>
-        <div className="absolute bottom-32 left-20 molecule-float" style={{ animationDelay: '4s' }}>
-          <Microscope className="w-10 h-10 text-protein/20" />
+        <div className="absolute bottom-32 left-20 particle-float" style={{ animationDelay: '4s' }}>
+          <div className="w-1 h-1 rounded-full bg-neon-green opacity-80" />
+        </div>
+        <div className="absolute top-1/3 left-1/3 particle-float" style={{ animationDelay: '1s' }}>
+          <div className="w-2 h-2 rounded-full bg-neon-blue opacity-50" />
+        </div>
+        <div className="absolute bottom-1/4 right-1/3 particle-float" style={{ animationDelay: '3s' }}>
+          <div className="w-1 h-1 rounded-full bg-neon-purple opacity-70" />
+        </div>
+        
+        {/* Molecular Icons with Glow */}
+        <div className="absolute top-32 right-32 particle-float">
+          <Atom className="w-8 h-8 text-neon-cyan opacity-30" />
+        </div>
+        <div className="absolute bottom-40 left-32 particle-float" style={{ animationDelay: '2.5s' }}>
+          <Dna className="w-10 h-10 text-neon-green opacity-25" />
+        </div>
+        <div className="absolute top-1/2 right-16 particle-float" style={{ animationDelay: '1.5s' }}>
+          <Microscope className="w-6 h-6 text-neon-pink opacity-35" />
         </div>
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center max-w-5xl mx-auto">
-          {/* Hero Badge */}
-          <div className="inline-flex items-center gap-2 bg-surface-elevated/50 backdrop-blur-sm border border-border/50 rounded-full px-6 py-3 mb-8 animate-fade-in">
-            <div className="w-2 h-2 bg-molecular rounded-full animate-pulse" />
+        <div className="text-center max-w-6xl mx-auto">
+          {/* Scientific Badge */}
+          <div className="inline-flex items-center gap-3 glass-card rounded-full px-8 py-4 mb-12 animate-fade-in">
+            <div className="w-3 h-3 bg-neon-cyan rounded-full animate-glow-pulse" />
             <span className="text-sm font-medium text-muted-foreground">
-              MIT Hackathon Challenge • Protein Structure Prediction
+              MIT Hackathon Challenge • Advanced Protein Structure Prediction
             </span>
           </div>
           
-          {/* Main Heading */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in">
-            <span className="text-gradient">AlphaHelix</span>
+          {/* Main Title with Neon Gradient */}
+          <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold mb-6 animate-fade-in">
+            <span className="text-gradient-protein text-neon-glow">AlphaHelix</span>
           </h1>
           
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Lightweight AI for protein structure prediction and drug discovery.
-            <br />
-            <span className="text-molecular">Democratizing molecular research</span> with efficient, specialized models.
+          <p className="text-2xl md:text-3xl text-foreground/90 mb-4 animate-fade-in font-light" style={{ animationDelay: '0.2s' }}>
+            Beyond Protein Structure Prediction
           </p>
           
-          {/* Key Features */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <div className="data-card p-6 rounded-xl interactive-card">
-              <div className="w-12 h-12 bg-molecular/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <Dna className="w-6 h-6 text-molecular" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Secondary Structure</h3>
-              <p className="text-sm text-muted-foreground">
-                Predict alpha-helix, beta-sheet, and coil states from amino acid sequences
-              </p>
-            </div>
-            
-            <div className="data-card p-6 rounded-xl interactive-card">
-              <div className="w-12 h-12 bg-helix/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <Atom className="w-6 h-6 text-helix" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Binding Affinity</h3>
-              <p className="text-sm text-muted-foreground">
-                Estimate ligand-protein binding strength for drug discovery
-              </p>
-            </div>
-            
-            <div className="data-card p-6 rounded-xl interactive-card">
-              <div className="w-12 h-12 bg-protein/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <Microscope className="w-6 h-6 text-protein" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Family Classification</h3>
-              <p className="text-sm text-muted-foreground">
-                Classify proteins into structural and functional families
-              </p>
-            </div>
-          </div>
+          <p className="text-lg md:text-xl text-muted-foreground mb-16 leading-relaxed animate-fade-in max-w-4xl mx-auto" style={{ animationDelay: '0.4s' }}>
+            Cutting-edge AI for molecular research and drug discovery.
+            <br />
+            <span className="text-neon-cyan">Democratizing biotechnology</span> with lightweight, specialized models.
+          </p>
           
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          {/* Main Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20 animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <Button 
               size="lg" 
-              className="bg-molecular hover:bg-molecular/90 text-primary-foreground px-8 py-4 text-lg font-semibold group"
+              className="btn-neon text-primary-foreground px-10 py-6 text-lg font-semibold group relative z-10"
             >
-              Start Prediction
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <Play className="mr-3 w-5 h-5" />
+              Run Prediction
+              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-border/50 hover:border-molecular/50 hover:text-molecular px-8 py-4 text-lg font-semibold"
+              className="glass-panel hover-glow px-10 py-6 text-lg font-semibold border-border-glow/30"
             >
-              View Documentation
+              <Upload className="mr-3 w-5 h-5" />
+              Upload Structure
             </Button>
           </div>
           
-          {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-8 mt-16 pt-8 border-t border-border/50 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+          {/* Feature Grid */}
+          <div className="grid md:grid-cols-4 gap-6 mb-16 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+            <div className="glass-card p-8 rounded-2xl hover-glow group">
+              <div className="w-16 h-16 bg-neon-cyan/10 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-neon-cyan/20 transition-colors">
+                <Dna className="w-8 h-8 text-neon-cyan" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-neon-cyan">Secondary Structure</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Predict alpha-helix, beta-sheet, and coil conformations with high accuracy
+              </p>
+            </div>
+            
+            <div className="glass-card p-8 rounded-2xl hover-glow group">
+              <div className="w-16 h-16 bg-neon-green/10 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-neon-green/20 transition-colors">
+                <Atom className="w-8 h-8 text-neon-green" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-neon-green">Binding Affinity</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Estimate ligand-protein interactions for accelerated drug discovery
+              </p>
+            </div>
+            
+            <div className="glass-card p-8 rounded-2xl hover-glow group">
+              <div className="w-16 h-16 bg-neon-pink/10 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-neon-pink/20 transition-colors">
+                <Microscope className="w-8 h-8 text-neon-pink" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-neon-pink">Family Classification</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Classify proteins into structural and functional families
+              </p>
+            </div>
+            
+            <div className="glass-card p-8 rounded-2xl hover-glow group">
+              <div className="w-16 h-16 bg-neon-purple/10 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-neon-purple/20 transition-colors">
+                <BarChart3 className="w-8 h-8 text-neon-purple" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-neon-purple">Confidence Scoring</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Real-time confidence metrics and uncertainty quantification
+              </p>
+            </div>
+          </div>
+          
+          {/* Bottom Toolbar */}
+          <div className="flex flex-wrap justify-center gap-4 animate-fade-in" style={{ animationDelay: '1s' }}>
+            <Button variant="outline" className="glass-panel hover-glow border-border-glow/20">
+              <Upload className="w-4 h-4 mr-2" />
+              Upload File
+            </Button>
+            <Button variant="outline" className="glass-panel hover-glow border-border-glow/20">
+              <Download className="w-4 h-4 mr-2" />
+              Download Model
+            </Button>
+            <Button variant="outline" className="glass-panel hover-glow border-border-glow/20">
+              <BarChart3 className="w-4 h-4 mr-2" />
+              Analyze Structure
+            </Button>
+          </div>
+          
+          {/* Performance Stats */}
+          <div className="flex flex-wrap justify-center gap-12 mt-20 pt-12 border-t border-border/30 animate-fade-in" style={{ animationDelay: '1.2s' }}>
             <div className="text-center">
-              <div className="text-3xl font-bold text-molecular mb-1">≤50M</div>
+              <div className="text-4xl font-bold text-neon-cyan mb-2 text-neon-glow">≤50M</div>
               <div className="text-sm text-muted-foreground">Parameters</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-helix mb-1">~90%</div>
+              <div className="text-4xl font-bold text-neon-green mb-2 text-neon-glow">~90%</div>
               <div className="text-sm text-muted-foreground">Accuracy Target</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-protein mb-1">Real-time</div>
+              <div className="text-4xl font-bold text-neon-pink mb-2 text-neon-glow">Real-time</div>
               <div className="text-sm text-muted-foreground">Predictions</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-neon-purple mb-2 text-neon-glow">GPU-Free</div>
+              <div className="text-sm text-muted-foreground">Inference</div>
             </div>
           </div>
         </div>
