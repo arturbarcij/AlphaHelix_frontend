@@ -50,11 +50,11 @@
     
     /* Advanced Gradients */
     --gradient-protein: linear-gradient(135deg, 
-      hsl(195 100% 60%), 
-      hsl(240 100% 65%), 
-      hsl(145 85% 55%), 
-      hsl(320 85% 65%), 
-      hsl(280 85% 65%)
+      hsl(195 100% 70%), 
+      hsl(240 100% 75%), 
+      hsl(145 85% 65%), 
+      hsl(320 85% 75%), 
+      hsl(280 85% 75%)
     );
     --gradient-helix: linear-gradient(90deg, 
       hsl(195 100% 60%), 
@@ -102,17 +102,29 @@
 
 /* Futuristic Component Styles */
 @layer components {
-  /* Neon Text Effects */
+  /* Enhanced Neon Text Effects with Better Readability */
   .text-gradient-protein {
     background: var(--gradient-protein);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 0 20px hsl(var(--neon-cyan) / 0.5));
+    filter: 
+      drop-shadow(0 0 30px hsl(var(--neon-cyan) / 0.4))
+      drop-shadow(0 0 60px hsl(var(--neon-blue) / 0.2))
+      brightness(1.2)
+      contrast(1.1);
+    text-shadow: 
+      0 0 20px hsl(var(--neon-cyan) / 0.3),
+      0 0 40px hsl(var(--neon-blue) / 0.2);
   }
   
   .text-neon-glow {
-    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor;
+    text-shadow: 
+      0 0 10px currentColor, 
+      0 0 20px currentColor, 
+      0 0 40px currentColor,
+      0 2px 4px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1);
   }
   
   /* Glass Morphism Cards */

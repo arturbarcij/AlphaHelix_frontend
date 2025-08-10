@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Atom, Dna, Microscope, Play, Download, Upload, BarChart3 } from "lucide-react";
 
@@ -49,20 +48,22 @@ const Hero = () => {
             </span>
           </div>
           
-          {/* Main Title with Neon Gradient */}
+          {/* Main Title with Improved Lighting */}
           <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold mb-6 animate-fade-in">
-            <span className="text-gradient-protein text-neon-glow">AlphaHelix</span>
+            <span className="text-gradient-protein drop-shadow-[0_0_40px_rgba(6,182,212,0.4)] filter brightness-110">
+              AlphaHelix
+            </span>
           </h1>
           
-          {/* Subtitle */}
-          <p className="text-2xl md:text-3xl text-foreground/90 mb-4 animate-fade-in font-light" style={{ animationDelay: '0.2s' }}>
+          {/* Subtitle with Better Contrast */}
+          <p className="text-2xl md:text-3xl text-foreground mb-4 animate-fade-in font-light drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]" style={{ animationDelay: '0.2s' }}>
             Beyond Protein Structure Prediction
           </p>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-16 leading-relaxed animate-fade-in max-w-4xl mx-auto" style={{ animationDelay: '0.4s' }}>
+          <p className="text-lg md:text-xl text-muted-foreground mb-16 leading-relaxed animate-fade-in max-w-4xl mx-auto drop-shadow-sm" style={{ animationDelay: '0.4s' }}>
             Cutting-edge AI for molecular research and drug discovery.
             <br />
-            <span className="text-neon-cyan">Democratizing biotechnology</span> with lightweight, specialized models.
+            <span className="text-neon-cyan font-medium drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">Democratizing biotechnology</span> with lightweight, specialized models.
           </p>
           
           {/* Main Action Buttons */}
@@ -86,13 +87,15 @@ const Hero = () => {
             </Button>
           </div>
           
-          {/* Feature Grid */}
+          {/* Feature Grid with Improved Title Readability */}
           <div className="grid md:grid-cols-4 gap-6 mb-16 animate-fade-in" style={{ animationDelay: '0.8s' }}>
             <div className="glass-card p-8 rounded-2xl hover-glow group">
               <div className="w-16 h-16 bg-neon-cyan/10 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-neon-cyan/20 transition-colors">
                 <Dna className="w-8 h-8 text-neon-cyan" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-neon-cyan">Secondary Structure</h3>
+              <h3 className="text-xl font-semibold mb-3 text-neon-cyan drop-shadow-[0_0_10px_rgba(6,182,212,0.3)] brightness-110">
+                Secondary Structure
+              </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Predict alpha-helix, beta-sheet, and coil conformations with high accuracy
               </p>
@@ -102,7 +105,9 @@ const Hero = () => {
               <div className="w-16 h-16 bg-neon-green/10 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-neon-green/20 transition-colors">
                 <Atom className="w-8 h-8 text-neon-green" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-neon-green">Binding Affinity</h3>
+              <h3 className="text-xl font-semibold mb-3 text-neon-green drop-shadow-[0_0_10px_rgba(34,197,94,0.3)] brightness-110">
+                Binding Affinity
+              </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Estimate ligand-protein interactions for accelerated drug discovery
               </p>
@@ -112,7 +117,9 @@ const Hero = () => {
               <div className="w-16 h-16 bg-neon-pink/10 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-neon-pink/20 transition-colors">
                 <Microscope className="w-8 h-8 text-neon-pink" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-neon-pink">Family Classification</h3>
+              <h3 className="text-xl font-semibold mb-3 text-neon-pink drop-shadow-[0_0_10px_rgba(236,72,153,0.3)] brightness-110">
+                Family Classification
+              </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Classify proteins into structural and functional families
               </p>
@@ -122,7 +129,9 @@ const Hero = () => {
               <div className="w-16 h-16 bg-neon-purple/10 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-neon-purple/20 transition-colors">
                 <BarChart3 className="w-8 h-8 text-neon-purple" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-neon-purple">Confidence Scoring</h3>
+              <h3 className="text-xl font-semibold mb-3 text-neon-purple drop-shadow-[0_0_10px_rgba(147,51,234,0.3)] brightness-110">
+                Confidence Scoring
+              </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Real-time confidence metrics and uncertainty quantification
               </p>
@@ -145,22 +154,22 @@ const Hero = () => {
             </Button>
           </div>
           
-          {/* Performance Stats */}
+          {/* Performance Stats with Enhanced Readability */}
           <div className="flex flex-wrap justify-center gap-12 mt-20 pt-12 border-t border-border/30 animate-fade-in" style={{ animationDelay: '1.2s' }}>
             <div className="text-center">
-              <div className="text-4xl font-bold text-neon-cyan mb-2 text-neon-glow">≤50M</div>
+              <div className="text-4xl font-bold text-neon-cyan mb-2 drop-shadow-[0_0_20px_rgba(6,182,212,0.4)] brightness-110">≤50M</div>
               <div className="text-sm text-muted-foreground">Parameters</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-neon-green mb-2 text-neon-glow">~90%</div>
+              <div className="text-4xl font-bold text-neon-green mb-2 drop-shadow-[0_0_20px_rgba(34,197,94,0.4)] brightness-110">~90%</div>
               <div className="text-sm text-muted-foreground">Accuracy Target</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-neon-pink mb-2 text-neon-glow">Real-time</div>
+              <div className="text-4xl font-bold text-neon-pink mb-2 drop-shadow-[0_0_20px_rgba(236,72,153,0.4)] brightness-110">Real-time</div>
               <div className="text-sm text-muted-foreground">Predictions</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-neon-purple mb-2 text-neon-glow">GPU-Free</div>
+              <div className="text-4xl font-bold text-neon-purple mb-2 drop-shadow-[0_0_20px_rgba(147,51,234,0.4)] brightness-110">GPU-Free</div>
               <div className="text-sm text-muted-foreground">Inference</div>
             </div>
           </div>
